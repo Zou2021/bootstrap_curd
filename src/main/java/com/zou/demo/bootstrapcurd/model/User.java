@@ -18,6 +18,7 @@ public class User {
     private String password;
     private String email;
     private String truename;
+
     /**
      * 创建时间
      */
