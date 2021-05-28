@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## 该项目基于springboot+mybatisplus+bootstrap
 
 ## 实现了登录注册功能以及数据库的增删改查
@@ -19,3 +20,8 @@ mysql的密码：**123456**
 默认登录密码：**zou**
 
 可进行**注册**操作
+=======
+# bootstrap_curd
+springboot+mybatisplus+bootstrap实现页面展示
+## 2021/5/27 添加了登录注册功能
+>>>>>>> origin/master
