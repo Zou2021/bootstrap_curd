@@ -27,17 +27,17 @@ public class LoginController {
 
     //简单登录验证
     @PostMapping("/check")
-    public String login(@RequestParam("username") String
-                                username,
-                        @RequestParam("password") String password,
+    public String login(@RequestParam("loginName") String
+                                loginName,
+                        @RequestParam("loginPwd") String loginPwd,
                         Model model, HttpSession session) {
         //用户名存在
-        if (userMapper.selectName(username) != null) {
+        if (userMapper.selectName(loginName) != null) {
             //密码不为空
-            if (userMapper.selectPwdByName(username) != null) {
+            if (userMapper.selectPwdByName(loginName) != null) {
                 //密码正确
-                if (userMapper.selectPwdByName(username).equals(password)) {
-                    session.setAttribute("loginUser", username);
+                if (userMapper.selectPwdByName(loginName).equals(loginPwd)) {
+                    session.setAttribute("loginUser", loginName);
                     return "index";
                 } else {
                     model.addAttribute("msg", "密码错误");

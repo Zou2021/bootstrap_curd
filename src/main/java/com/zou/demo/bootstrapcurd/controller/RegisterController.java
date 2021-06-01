@@ -26,15 +26,15 @@ public class RegisterController {
 
     //简单注册验证
     @PostMapping("/checkPwd")
-    public String login(@RequestParam("username") String username,
-                        @RequestParam("password") String password,
+    public String login(@RequestParam("loginName") String loginName,
+                        @RequestParam("loginPwd") String loginPwd,
                         @RequestParam("repassword") String repassword,
                         Model model) {
         //用户名不存在
-        if (userMapper.selectName(username) == null) {
+        if (userMapper.selectName(loginName) == null) {
             //两次输入密码是否一致
-            if (password.equals(repassword)) {
-                userMapper.registerUser(username, password);
+            if (loginPwd.equals(repassword)) {
+                userMapper.registerUser(loginName, loginPwd);
                 model.addAttribute("msg", "注册成功！请登录");
             } else {
                 model.addAttribute("msg", "两次输入的密码不一致！");

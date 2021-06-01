@@ -10,10 +10,10 @@
     <h1>Login</h1>
     <form method="post" th:action="@{check}">
         <label>
-            <input type="text" required="required" placeholder="用户名" name="username"/>
+            <input type="text" required="required" placeholder="用户名" name="loginName"/>
         </label>
         <label>
-            <input type="password" required="required" placeholder="密码" name="password"/>
+            <input type="password" required="required" placeholder="密码" name="loginPwd"/>
         </label>
         <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
         <button class="but" type="submit">登录</button>
