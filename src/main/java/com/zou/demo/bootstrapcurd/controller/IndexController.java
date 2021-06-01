@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * @author：邹祥发
  * @date：2021/5/21
+ * 进入主页需先登录
  **/
 @RequestMapping
 @Controller

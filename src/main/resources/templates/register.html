@@ -16,7 +16,7 @@
             <input type="password" required="required" placeholder="密码" name="loginPwd"/>
         </label>
         <label>
-            <input type="password" required="required" placeholder="确认密码" name="repassword"/>
+            <input type="password" required="required" placeholder="确认密码" name="rePassword"/>
         </label>
         <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
         <button class="but" type="submit">注册</button>

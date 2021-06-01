@@ -8,6 +8,7 @@ import lombok.Data;
 /**
  * @author: 邹祥发
  * @date: 2021/5/31 17:06
+ * 登录表
  */
 @Data
 @TableName("login_user")
