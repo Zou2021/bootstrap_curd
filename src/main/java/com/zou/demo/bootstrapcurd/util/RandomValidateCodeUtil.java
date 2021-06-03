@@ -14,6 +14,7 @@ import java.util.Random;
 /**
  * @author: 邹祥发
  * @date: 2021/6/2 16:50
+ * 图片验证码工具类
  */
 public class RandomValidateCodeUtil {
     public static final String RANDOMCODEKEY = "RANDOMVALIDATECODEKEY";//放到session中的key

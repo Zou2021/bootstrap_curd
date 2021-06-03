@@ -34,26 +34,20 @@ public class LoginController {
                         Model model, HttpSession session) {
         //用户名存在
         if (userMapper.selectName(loginName) != null) {
-            //密码不为空
-            if (userMapper.selectPwdByName(loginName) != null) {
-                //密码正确
-                if (userMapper.selectPwdByName(loginName).equals(loginPwd)) {
-                    //从session中获取随机数
-                    String random = (String) session.getAttribute("RANDOMVALIDATECODEKEY");
-                    if (random != null && !"".equals(random) && random.equalsIgnoreCase(code)) {
-                        session.setAttribute("loginUser", loginName);
+            //密码正确
+            if (userMapper.selectPwdByName(loginName).equals(loginPwd)) {
+                //从session中获取随机数
+                String random = (String) session.getAttribute("RANDOMVALIDATECODEKEY");
+                if (random != null && !"".equals(random) && random.equalsIgnoreCase(code)) {
+                    session.setAttribute("loginUser", loginName);
 
-                        return "index";
-                    } else {
-                        model.addAttribute("msg", "验证码错误");
-                        return "login";
-                    }
+                    return "index";
                 } else {
-                    model.addAttribute("msg", "密码错误");
+                    model.addAttribute("msg", "验证码错误");
                     return "login";
                 }
             } else {
-                model.addAttribute("msg", "密码为空，请重新注册！");
+                model.addAttribute("msg", "密码错误");
                 return "login";
             }
         } else {
