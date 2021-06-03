@@ -30,6 +30,7 @@ public class LoginController {
     public String login(@RequestParam("loginName") String
                                 loginName,
                         @RequestParam("loginPwd") String loginPwd,
+                        @RequestParam("code") String code,
                         Model model, HttpSession session) {
         //用户名存在
         if (userMapper.selectName(loginName) != null) {
@@ -37,8 +38,16 @@ public class LoginController {
             if (userMapper.selectPwdByName(loginName) != null) {
                 //密码正确
                 if (userMapper.selectPwdByName(loginName).equals(loginPwd)) {
-                    session.setAttribute("loginUser", loginName);
-                    return "index";
+                    //从session中获取随机数
+                    String random = (String) session.getAttribute("RANDOMVALIDATECODEKEY");
+                    if (random != null && !"".equals(random) && random.equalsIgnoreCase(code)) {
+                        session.setAttribute("loginUser", loginName);
+
+                        return "index";
+                    } else {
+                        model.addAttribute("msg", "验证码错误");
+                        return "login";
+                    }
                 } else {
                     model.addAttribute("msg", "密码错误");
                     return "login";

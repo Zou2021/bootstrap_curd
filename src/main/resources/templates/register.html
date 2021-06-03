@@ -10,7 +10,7 @@
     <h1>Register</h1>
     <form method="post" th:action="@{checkPwd}">
         <label>
-            <input type="text" required="required" placeholder="用户名" name="loginName"/>
+            <input type="text" autofocus required="required" placeholder="用户名" name="loginName"/>
         </label>
         <label>
             <input type="password" required="required" placeholder="密码" name="loginPwd"/>
@@ -20,7 +20,7 @@
         </label>
         <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
         <button class="but" type="submit">注册</button>
-        <a th:href="@{login}">登录</a>
+        <span style="float: right;"><a style="color: rgb(204, 204, 204); margin-right: 10px;" th:href="@{login}">登录</a></span>
     </form>
 </div>
 </body>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>用户登录</title>
     <link rel="stylesheet" href="" th:href="@{/css/login.css}">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <div id="login">
@@ -15,10 +16,30 @@
         <label>
             <input type="password" required="required" placeholder="密码" name="loginPwd"/>
         </label>
+
+        <div id="main_form">
+            <div id="input_content">
+                <input autocomplete="off" id="verify_input" placeholder="请输入验证码" maxlength="6" name="code">
+            </div>
+            <div id="verify_image">
+                <img id="imgVerify" src="login/getVerify" alt="更换验证码" style="padding: 0 0 5px 28px" height="45"
+                     width="240" onclick="getVerify(this);">
+            </div>
+        </div>
+
         <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
         <button class="but" type="submit">登录</button>
-        <a th:href="@{register}">注册</a>
+        <span style="float: right;"><a style="color: rgb(204, 204, 204); margin-right: 10px;"
+                                       th:href="@{register}">注册</a></span>
     </form>
 </div>
 </body>
+
+<script>
+    function getVerify() {
+        $("#verify_input").val("");
+        $("#imgVerify").attr("src", 'login/getVerify?' + Math.random());//jquery方式
+    }
+</script>
+
 </html>

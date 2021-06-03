@@ -35,7 +35,9 @@ public class RegisterController {
             //两次输入密码是否一致
             if (loginPwd.equals(rePassword)) {
                 userMapper.registerUser(loginName, loginPwd);
-                model.addAttribute("msg", "注册成功！请登录");
+//                model.addAttribute("msg", "注册成功！请登录");
+                return "login";
+
             } else {
                 model.addAttribute("msg", "两次输入的密码不一致！");
             }
