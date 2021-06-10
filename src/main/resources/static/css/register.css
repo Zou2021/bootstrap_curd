@@ -56,8 +56,9 @@ h1 {
 }
 span{
     padding-right: 120px;
-    padding-top: 13px;
+    padding-top: 15px;
 }
 a{
     text-decoration: none;
+    margin-right: 10px;
 }

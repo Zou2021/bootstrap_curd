@@ -19,7 +19,7 @@ import java.util.Random;
 public class RandomValidateCodeUtil {
     public static final String RANDOMCODEKEY = "RANDOMVALIDATECODEKEY";//放到session中的key
     private static final Logger logger = LoggerFactory.getLogger(RandomValidateCodeUtil.class);
-    private final String randString = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";//随机产生数字与字母组合的字符串
+    private final String randString = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";//随机产生数字与字母组合的字符串
 
     private final int width = 110;// 图片宽
     private final int height = 25;// 图片高

@@ -3,7 +3,7 @@
 
 ## 实现了登录注册功能以及数据库的增删改查
 
-**项目内含SQL语句**
+**项目<font style:color='red'>内含SQL语句</font>**
 
 mysql的账号：**root**
 

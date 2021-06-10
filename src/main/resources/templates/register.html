@@ -19,8 +19,7 @@
     </label>
     <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
     <input class=input_3 type="submit" value="注册"/>
-    <span style="float: right;"><a style="color: rgb(204, 204, 204); margin-right: 10px;"
-                                   th:href="@{login}">登录</a></span>
+    <span style="float: right;"><a th:href="@{login}">登录</a></span>
 </form>
 </body>
 </html>
