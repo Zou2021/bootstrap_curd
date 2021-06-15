@@ -3,8 +3,8 @@ package com.zou.demo.bootstrapcurd.controller;
 import com.zou.demo.bootstrapcurd.mapper.UserMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
@@ -20,13 +20,13 @@ public class LoginController {
     @Resource
     private UserMapper userMapper;
 
-    @GetMapping("/login")
+    @RequestMapping(value = "/login",method = {RequestMethod.GET})
     public String login() {
         return "login";
     }
 
     //简单登录验证
-    @PostMapping("/check")
+    @RequestMapping(value = "/check",method = {RequestMethod.POST})
     public String login(@RequestParam("loginName") String
                                 loginName,
                         @RequestParam("loginPwd") String loginPwd,
